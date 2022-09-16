@@ -1,5 +1,5 @@
 name: "Greet"
-description: "Greet someone"
+# description: "Greet someone"
 
 inputs:
   name:
@@ -19,8 +19,6 @@ runs:
       shell: bash
     - id: random-number
       run: echo "::set-output name=random::$(echo $RANDOM)"
-      shell: bash
-    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-      shell: bash          
+      shell: bash        
     - run: echo Goodbye ${{ inputs.name }}.
       shell: bash

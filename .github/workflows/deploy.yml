@@ -1,6 +1,6 @@
 
 name: "Test Reusable Action"
-on: workflow_dispatch
+on: [workflow_dispatch]
 
 jobs:
   job-one:
@@ -8,11 +8,13 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-      - name: Greeting (local action)
-        id: greet
+
+      - name: Greeting (local action)        
         uses: ./.github/actions/greet
+        id: greet
         with:
           name: "Mark"      
+      
       - name: Greeting (local action output)
         run: echo "${{ steps.greet.outputs.random }}"
         
