@@ -16,7 +16,7 @@ jobs:
       - name: Greeting (local action output)
         run: echo "${{ steps.greet.outputs.random }}"
         
-  job-two:  
-    uses: ./.github/actions/greet.yml@main
-    with:
-      name: "Mark"
+  # job-two:  
+  #   uses: ./.github/actions/greet.yml@main
+  #   with:
+  #     name: "Mark"
