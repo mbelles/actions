@@ -3,13 +3,13 @@ name: "Test Reusable Action"
 on: workflow_dispatch
 
 jobs:
-  dev-deploy:
+  dev-checkout:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Greetings
-        uses: ./.github/actions/greet.yml
-        with:
-          name: "Mark"
+  dev:  
+    uses: ./.github/actions/greet.yml
+    with:
+      name: "Mark"
