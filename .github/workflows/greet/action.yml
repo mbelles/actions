@@ -15,10 +15,11 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: echo Hello ${{ inputs.name }}.
+    - name: Test Interpolation ${{inputs.name}}
+      run: echo Hello ${{inputs.name}}.
       shell: bash
     - id: random-number
       run: echo "::set-output name=random::$(echo $RANDOM)"
       shell: bash        
-    - run: echo Goodbye ${{ inputs.name }}.
+    - run: echo Goodbye ${{inputs.name}}.
       shell: bash
