@@ -8,6 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Greetings
-        uses: actions/greet@v1
+        uses: ./.github/actions/greet.yml
         with:
           who-to-greet: "Mark"
