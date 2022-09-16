@@ -17,6 +17,6 @@ jobs:
         run: echo "${{ steps.greet.outputs.random }}"
         
   job-two:  
-    uses: ./.github/actions/greet.yml
+    uses: ./.github/actions/greet.yml@main
     with:
       name: "Mark"
