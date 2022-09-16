@@ -10,6 +10,6 @@ jobs:
         uses: actions/checkout@v3
 
   dev:  
-    uses: ./.github/worlflows/greet.yml
+    uses: ./.github/actions/greet.yml
     with:
       name: "Mark"
