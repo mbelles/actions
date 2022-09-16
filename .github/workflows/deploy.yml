@@ -3,13 +3,20 @@ name: "Test Reusable Action"
 on: workflow_dispatch
 
 jobs:
-  dev-checkout:
+  job-one:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-
-  dev:  
+      - name: Greeting (local action)
+        id: greet
+        uses: ./.github/actions/greet
+        with:
+          name: "Mark"      
+      - name: Greeting (local action output)
+        run: echo "${{ steps.greet.outputs.random }}"
+        
+  job-two:  
     uses: ./.github/actions/greet.yml
     with:
       name: "Mark"
