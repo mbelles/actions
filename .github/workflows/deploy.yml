@@ -8,8 +8,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-        
+
       - name: Greetings
         uses: ./.github/actions/greet.yml
         with:
-          who-to-greet: "Mark"
+          name: "Mark"
